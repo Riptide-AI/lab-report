@@ -1,0 +1,95 @@
+body, html {
+    font-family: Tahoma;
+}
+
+div{
+    border: 2px solid black;
+}
+
+h1{
+    margin: auto;
+}
+
+#main{
+    width: 600px;
+    margin: auto;
+    padding: 0;
+    border: 0;
+}
+
+#header{
+    background-color: gold;
+    height: 80px;
+    padding: 0;
+    text-align: center;
+}
+
+#space{
+    background-color: whitesmoke;
+    width: 30%;
+    height: 50px;
+    float: left;
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+#num1{
+    height: 50px;
+    border: 0;
+    float: left;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 55%;
+}
+
+#content{
+    /* clear: both; */
+    height: 350px;
+    align-content: stretch;
+    padding: 0;
+    border: thin;
+}
+
+#block2, #block3, #block4, #block5{
+    float: left;
+    width: 134.7px;
+    height: 67%;
+    text-align: center;
+    padding-top: 33%;
+    border-top: thin;
+    border-bottom: thin;
+}
+
+#block3, #block4, #block5{
+    margin-left: 15px;
+}
+
+#block2{
+    background-color: cornflowerblue;
+}
+
+#block3{
+    background-color: tomato;    
+}
+
+#block4{
+    background-color: whitesmoke;
+}
+
+#block5{
+    background-color: tomato;   
+}
+
+#footer{
+    background-color: gold;
+    height: 80px;
+    padding: 0;
+    text-align: center;
+    clear: both;
+}
+
+#num6{
+    margin-top: 4%;
+    margin-right: 80%;
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="scripts/script.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   <title>Report-page</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header>
+         <div class="container">
+            <p class="title">Звіти з лабораторних робіт</p>
+            <p class="title">з дисципліни «розроблення web-застосуваннь»</p>
+            <br>
+            <p>Роботу виконали студенти групи <b>ІА-93</b> Візняк Максим та Бречко Олександра</p>
+         </div>
+      </header>
+      <nav>
+         <div class="nav-element"><a href="../lab1/index.html">Лабораторна 1</a></div>
+         <div class="nav-element"><a href="index.html">Лабораторна 2</a></div>
+         <div class="nav-element"><a href="../lab3/index.html">Лабораторна 3</a></div>
+         <div class="nav-element"><a href="../lab4/index.html">Лабораторна 4</a></div>
+	      <div class="nav-element"><a href="../lab5/index.html">Лабораторна 5</a></div>
+         <div class="nav-element"><a href="../lab6/index.html">Лабораторна 6</a></div>
+         <div class="nav-element"><a href="../lab7/index.html">Лабораторна 7</a></div>
+         <div class="nav-element"><a href="../lab8/index.html">Лабораторна 8</a></div>
+      </nav>
+      <section>
+         <div class="menu">
+            <div class="menu-item" onclick="toggle('lists')">Списки</div>
+            <div class="menu-item" onclick="toggle('index')">Ідентифікатори </div>
+            <!-- <div class="menu-item" onclick="toggle('padding')">Відступи</div> -->
+            <div class="menu-item" onclick="toggle('set-task-lab')">Постановка задачі Лабораторної №2</div>
+            <div class="menu-item" onclick="toggle('total')">Висновок</div>
+            
+            <div class="drop-out">
+               <div class="drop-down" onclick="dropDown()">
+                  <p>селектори </p>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="25" viewBox="0 0 32 32">
+                     <path class="svg" d="M28.2,1.7l-1.4-1.4C26.6,0.1,26.4,0,26.1,0c-0.2,0-0.5,0.1-0.7,0.3L14.2,11.5L3,0.3C2.8,0.1,2.6,0,2.4,0
+                           C2.1,0,1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.1,0,2.4C0,2.6,0.1,2.8,0.3,3l13.3,13.3c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.3
+                           L28.2,3c0.2-0.2,0.3-0.4,0.3-0.7C28.5,2.1,28.4,1.9,28.2,1.7z" />
+                  </svg>
+               </div>
+               <div class="container" id="drop-down-content">
+                  <div class="pop-text" onclick="toggle('class-selector')">Селектори тегу і класу</div>
+                  <div class="pop-text" onclick="toggle('other-selector')">Інші селектори</div>
+                  <div class="pop-text" onclick="toggle('group-selector')">групування селекторів</div>
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="start-window">
+               <p>Start<!--Here write any code you want to show as a report--></p>
+         </div>
+
+         <div class="content-window" id="lists">
+            <div class="text">
+               <div class="code">
+                  <code>
+                     <pre>
+HTML
+
+&lt;div class="nav-wrap"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('price-list')" &gt;Ціни&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('team')" &gt;Команда&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('slider')" &gt;Галерея&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('about')" &gt;Про нас&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('contacts')" &gt;Контакти&lt;/div&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+                     </pre>
+                  </code>
+                  <code>
+                     <pre>
+CSS
+
+.navbar .nav-wrap {
+   width: 100%;
+   max-width: 1370px;
+}
+
+.navbar .nav-wrap ul {
+   list-style-type: none;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-pack: distribute;
+   justify-content: space-around;
+}
+
+.navbar .nav-wrap ul li {
+   -ms-flex-preferred-size: 20%;
+   flex-basis: 20%;
+}
+
+.navbar .nav-wrap ul li div {
+   font-family: "Roboto", sans-serif;
+   font-size: 20px;
+   color: #fff;
+   text-decoration: none;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+      align-items: center;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+      justify-content: center;
+   height: 8vh;
+   min-height: 60px;
+   width: 100%;
+   -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+}
+
+.navbar .nav-wrap ul li div:hover {
+   color: #f5cb5c;
+   background-color: rgba(66, 66, 66, 0.6);
+   -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+}
+                     </pre>
+                  </code>
+               </div>
+               <div class="code-img"> 
+                  <img src="sources/img/list.png">
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="index">
+            <div class="text">
+               <div class="code">
+                  <code>
+                     <pre>
+HTML
+
+&lt;div class="slides"&gt;
+   &lt;div class="slide" id="slide-1"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-2"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-3"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-4"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-5"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+                     </pre>
+                  </code>
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="padding">
+            <div class="text">
+               <div class="code">
+                  <code>
+                     <pre>
+HTML
+
+&lt;div class="nav-wrap"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('price-list')" &gt;Ціни&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('team')" &gt;Команда&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('slider')" &gt;Галерея&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('about')" &gt;Про нас&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div onclick="smoothScroll('contacts')" &gt;Контакти&lt;/div&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+                     </pre>
+                  </code>
+                  <code>
+                     <pre>
+CSS
+
+.navbar .nav-wrap {
+   width: 100%;
+   max-width: 1370px;
+}
+
+.navbar .nav-wrap ul {
+   list-style-type: none;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-pack: distribute;
+   justify-content: space-around;
+}
+
+.navbar .nav-wrap ul li {
+   -ms-flex-preferred-size: 20%;
+   flex-basis: 20%;
+}
+
+.navbar .nav-wrap ul li div {
+   font-family: "Roboto", sans-serif;
+   font-size: 20px;
+   color: #fff;
+   text-decoration: none;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+      align-items: center;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+      justify-content: center;
+   height: 8vh;
+   min-height: 60px;
+   width: 100%;
+   -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+}
+
+.navbar .nav-wrap ul li div:hover {
+   color: #f5cb5c;
+   background-color: rgba(66, 66, 66, 0.6);
+   -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+}
+                     </pre>
+                  </code>
+      </div>
+      <div class="code-img"> 
+         <img src="sources/img/list.png">
+      </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="total">
+            <div class="text">
+               <p>
+                  В ході виконання Лабораторної роботи №2 було опрацьовано теоретичний матеріал по каскадних таблицях стилів та створено стильове оформлення веб-сайту засобами CSS.
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="set-task-lab">
+            <div class="text">
+               <p>
+                  Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ. <br> <br>
+                  Мета: придбати практичні навички роботи  з селекторами,ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів      
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="class-selector">
+            <div class="code">
+               <code>
+                  <pre>
+Селектори тегу
+
+html {
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+ }
+ 
+ body {
+   background: url("../sources/img/background.jpg") 50% 90% fixed no-repeat;
+ }
+ 
+ header {
+   min-height: 800px;
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   -webkit-box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.7);
+           box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.7);
+ }
+                  </pre>
+               </code>
+               <code>
+                  <pre>
+Селектори класу
+
+.wrapper {
+   width: 100%;
+   height: 100%;
+   z-index: 2;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   border-bottom: 3px #f5cb5c solid;
+   position: relative;
+ }
+                  </pre>
+               </code>
+            </div>
+         </div>
+
+         <div class="content-window" id="other-selector">
+            <div class="code">
+               <code>
+                  <pre>
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+                  </pre>
+               </code>
+            </div>
+            <div class="code-img"> 
+               <img src="">
+            </div>
+         </div>
+
+         <div class="content-window" id="group-selector">
+            <div class="code">
+               <code>
+                  <pre>
+header .wrapper .logo-container article {
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  margin: 50px 0;
+  height: 60px;
+  width: 600px;
+  border-top: 1px #ffffff solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+}
+                  </pre>
+               </code>
+               
+            </div>
+         </div>
+         
+      </section>
+   </div>
+   <footer>
+      <div><a href="../index.html">Home</a></div>
+   </footer>
+</body>
+
+</html>

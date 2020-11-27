@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="scripts/script.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   <title>Report-page</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header>
+         <div class="container">
+            <p class="title">Звіти з лабораторних робіт</p>
+            <p class="title">з дисципліни «розроблення web-застосуваннь»</p>
+            <br>
+            <p>Роботу виконали студенти групи <b>ІА-93</b> Візняк Максим та Бречко Олександра</p>
+         </div>
+      </header>
+      <nav>
+         <div class="nav-element"><a href="index.html">Лабораторна 1</a></div>
+         <div class="nav-element"><a href="../lab2/index.html">Лабораторна 2</a></div>
+         <div class="nav-element"><a href="../lab3/index.html">Лабораторна 3</a></div>
+         <div class="nav-element"><a href="../lab4/index.html">Лабораторна 4</a></div>
+	      <div class="nav-element"><a href="../lab5/index.html">Лабораторна 5</a></div>
+         <div class="nav-element"><a href="../lab6/index.html">Лабораторна 6</a></div>
+         <div class="nav-element"><a href="../lab7/index.html">Лабораторна 7</a></div>
+         <div class="nav-element"><a href="../lab8/index.html">Лабораторна 8</a></div>
+      </nav>
+      <section>
+         <div class="menu">
+            <div class="menu-item" onclick="toggle('environment-description')">Опис предметного середовища</div>
+            <div class="menu-item" onclick="toggle('set-tasks')">постановка задачі </div>
+            <div class="menu-item" onclick="toggle('set-task-lab')">постановка задачі Лабораторної №1</div>
+            <div class="menu-item" onclick="toggle('total')">Висновок</div>
+            <div class="drop-out">
+               <div class="drop-down" onclick="dropDown()">
+                  <p>структура документа </p>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="25" viewBox="0 0 32 32">
+                     <path class="svg" d="M28.2,1.7l-1.4-1.4C26.6,0.1,26.4,0,26.1,0c-0.2,0-0.5,0.1-0.7,0.3L14.2,11.5L3,0.3C2.8,0.1,2.6,0,2.4,0
+                           C2.1,0,1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.1,0,2.4C0,2.6,0.1,2.8,0.3,3l13.3,13.3c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.3
+                           L28.2,3c0.2-0.2,0.3-0.4,0.3-0.7C28.5,2.1,28.4,1.9,28.2,1.7z" />
+                  </svg>
+               </div>
+               <div class="container" id="drop-down-content">
+                  <div class="pop-text" onclick="toggle('table-code')">HTML код таблиць</div>
+                  <div class="pop-text" onclick="toggle('form-code')">HTML код форми</div>
+                  <div class="pop-text" onclick="toggle('img-code')">HTML код зображень</div>
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="start-window">
+               <p>Start<!--Here write any code you want to show as a report--></p>
+         </div>
+
+         <div class="content-window" id="environment-description">
+            <div class="text">
+               <br>
+               Данний сайт створюється для місцевого барбершопу <br>
+                  Предметна галузь: Barbershop – чоловіча цирюльня. <br>
+                  Основна мета: Спрощення процесу обслуговування клієнтів барбершопу, <br>
+                  надання клієнтам доступу до необхідної інформацію про роботу барбершопу та послуги, що він надає, <br> 
+                  а саме надання можливості клієнтам передивитись прейскурант, <br>
+                  можливість запису до обраного барбера та на обраний час <br>
+                  можливість перегляду інформації та робіт працівників, перегляд вітрини закладу та контакти <br>
+               <p><b>Опис бізнес логіки</b> <br> <br>
+               <b>Головна сторінка</b>: Користувач має можливість запису, для цього необхідно вказати свої контактні дані (ім’я, номер телефону), обрати послугу, майстра та час візиту. Ведення клієнтської бази здійснюється через сторонній сервіс Yclients. Також з головної сторінки користувач має доступ до панелі навігації на сайті. <br>
+               <b>Ціни</b>: Користувач має можливість ознайомитись з переліком послуг, що надає барбершоп, та їх вартістю. <br>
+               <b>Команда</b>: У розділі «Команда» користувачу доступна інформація про майстрів, що надають послуги. Також користувач має можливість ознайомитись з рейтингом майстрів та відгуками про їх роботу, залишити свій відгук, побачити фото робіт обраного майстра. <br>
+               <b>Галерея</b>: Розділ сайту, на якому розміщена фото-галерея барбершопу. <br>
+               <b>Про нас</b>: Розділ сайту, де знаходиться основна інформація про даний заклад та коротко описане його призначення. <br>
+               <b>Контакти</b>: Користувач має можливість дізнатися контактну інформацію барбершопу, а саме: адресу, номери телефонів, адресу електронної скриньки. Також в розділі «Контакти» розміщена карта, на якій можна побачити розміщення барбершопу. <br>
+               </p>
+               <b>Сценарії взаємодії</b>
+               <p>1. «Запис до обраного майстра на певну послугу» <br>
+                  - Натиснути кнопку «Запис» на головній сторінці веб-сайту. <br>
+                  - Ввести контактні дані; обрати послугу, майстра та час візиту. <br>
+                  - Натиснути кнопку підтвердження запису. <br>
+                  </p>
+               <p>2. «Вибір майстра, що надаватиме обрану послугу» <br>
+                  - Обрати розділ «Команда» на панелі навігації вгорі головної сторінки. <br>
+                  - Натиснути на зображення майстра. <br>
+                  - Переглянути інформацію про майстра, фото його робіт, рейтинг та відгуки. <br>
+                  - За необхідністю, повернутися до попередньої сторінки та переглянути інформацію про іншого майстра. <br>
+                  </p>
+               <p>
+                  3. «Зв’язок з працівниками барбершопу» <br>
+                  - Обрати розділ «Контакти» на панелі навігації вгорі головної сторінки. <br>
+                  - Натиснути на адресу електронної пошти, щоб надіслати лист або натиснути на номер телефону, щоб здійснити виклик (за умови, що перегляд веб-сайту відбувається з мобільного пристрою) <br>
+                  </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="set-tasks">
+            <div class="text">
+               <p>
+                  Тема: Веб-сайт барбершопу – чоловічої цирюльні. <br>
+                  Основна мета програми: <br>
+                  Спрощення процесу обслуговування клієнтів барбершопу, надання клієнтам доступу до необхідної інформацію про роботу барбершопу та послуги, що він надає. <br>
+                  Основні функції програми: <br>
+                  -	Надання інформації про барбершоп (короткого опису, вартості послуг, інформації про майстрів, контактної інформації). <br>
+                  -	Функція запису клієнта на конкретну послугу до обраного майстра. <br>
+                  -	Можливість залишити відгук про конкретного майстра та послуги, що він надає. <br>
+                  
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="total">
+            <div class="text">
+               <p>
+                  В ході виконання Лабораторної роботи №1 було: <br>
+                  -	обрано предметну область для створення веб-сайту <br>
+                  -	описано обрану предметну область та функціонал програми <br>
+                  -	створено головну сторінку веб-сайту <br>
+
+                  
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="set-task-lab">
+            <div class="text">
+               <p>
+                  Тема: СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОГО ГАЛУЗІ. <br>
+                  Мета: придбати практичні навички роботи  з html-документом, таблицями,формами, зображеннями, посиланнями  <br>                     
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="table-code">
+            <div class="code">
+               <code>
+                  <pre>
+HTML
+
+&lt;div class="table"&gt;
+   &lt;table cellspacing="0" cellpadding="0"&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Стрижка&lt;/td&gt;
+         &lt;td class="price"&gt;200 грн&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td class="dark"&gt;Стрижка бороди&lt;/td&gt;
+         &lt;td class="dark price"&gt;120 грн&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt; 
+         &lt;td&gt;Стрижка під машинку&lt;/td&gt;
+         &lt;td class="price"&gt;150 грн&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td class="dark"&gt;Дитяча стрижка до 12 років&lt;/td&gt;
+         &lt;td class="dark price"&gt;150 грн&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;Стрижка + борода&lt;/td&gt;
+         &lt;td class="price"&gt;300 грн&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td class="dark"&gt;Стрижка батько та син&lt;/td&gt;
+         &lt;td class="dark price"&gt;300 грн&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/table&gt;
+&lt;/div&gt;
+                  </pre>
+               </code>
+               <code>
+                  <pre>
+CSS
+
+section .pricelist-block .wrapper .table {
+  border: none;
+  width: 100%;
+}
+
+section .pricelist-block .wrapper .table td {
+  width: 100%;
+  padding: 0 30px 0 30px;
+  color: #ffffff;
+  height: 60px;
+  background-color: #424242;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+section .pricelist-block .wrapper .table .price {
+  text-align: right;
+  width: 100%;
+  min-width: 150px;
+  color: #f5cb5c;
+}
+
+section .pricelist-block .wrapper .table .dark {
+  background-color: #333333;
+}
+                  </pre>
+               </code>
+            </div>
+            <div class="code-img"> 
+               <img src="sources/img/pricelist.png">
+            </div>
+         </div>
+
+         <div class="content-window" id="form-code">
+            <div class="code">
+               <code>
+                  <pre>
+HTML
+
+&lt;div class="form_box" id = "ContactUs"&gt;
+   &lt;div class="text_wrap"&gt;
+      &lt;h2 class="title_text"&gt;
+         Need a Project?
+      &lt;/h2&gt;
+      &lt;p&gt;Let us know what you're looking for in an agency. 
+      We'll take a look and see if this could be the start of something beautiful.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class="form_fields"&gt;
+      &lt;form action=""&gt;
+         &lt;div class="input_row"&gt;
+            &lt;input type="text" name = "Name" placeholder="Your Name" value=""&gt;
+            &lt;input type="text" name = "Email" placeholder="Your Email"&gt;
+         &lt;/div&gt;
+         &lt;div class="input_row"&gt;
+            &lt;input type="text" name = "Title" placeholder="Your Title"&gt;
+         &lt;/div&gt;
+         &lt;div class="input_row"&gt;   
+            &lt;textarea name="Comment" id="Comment" cols="30" rows="10" placeholder="Your Comment"&gt;
+            &lt;/textarea&gt;
+         &lt;/div&gt;
+            &lt;input type="submit" name = "Submit" value="Send Message"&gt;
+      &lt;/form&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </pre>
+               </code>
+               <code>
+                  <pre>
+CSS
+                  
+.form_box{
+    padding: 100px 64px 0 64px;
+    max-width: 816px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.form_box .title_text{
+
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+}
+.form_box p {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Nunito Sans', sans-serif;
+    word-spacing: 2.5px;
+    margin-bottom: 40px;
+}
+.form_fields{
+    width: 100%;
+}
+input[type="text"]{			
+    height: 50px;
+    flex-basis: 325px;
+    color: #787878;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    border: 0;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+
+}
+input[name = "Title"]{			
+    flex-basis: 100%;
+}
+textarea[name = "Comment"]{
+    min-width: 100%;
+    min-height: 175px;
+    height: 175px;
+    color: #787878;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    border: 0;
+    padding: 15px 0 0 20px;
+    font-size: 15px;
+    margin-bottom: 30px;
+
+}
+input[name = "Submit"]{			
+    width: 180px;
+    height: 55px;
+    border:  0;
+    background-color: #10c9c3;
+    color:  white;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color .2s linear;
+    margin-bottom: 100px;
+}
+input[name = "Submit"]:hover{			
+    background-color: #252525;
+    cursor: pointer;
+}
+
+.input_row{
+    margin:  0 auto;
+    display: flex;
+    justify-content: space-between;
+                  </pre>
+               </code>
+            </div>
+            <div class="code-img"> 
+               <p>Даний файл знаходиться у папці lab1/Project 1/index.html</p> <br>
+               <img src="sources/img/form.png">
+            </div>
+         </div>
+
+         <div class="content-window" id="img-code">
+            <div class="code">
+               <code>
+                  <pre>
+HTML 
+
+&lt;div class="slides"&gt;
+   &lt;div class="slide" id="slide-1"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-2"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-3"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-4"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+   &lt;div class="slide" id="slide-5"&gt;
+      &lt;img src="sources/img/slide-1.jpg"&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </pre>
+               </code>
+               <code>
+                  <pre>
+CSS
+
+section .photo-slider .wrapper .slider-block .slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 500%;
+}
+
+section .photo-slider .wrapper .slider-block .slides .slide {
+  scroll-snap-align: start;
+  width: 20%;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+section .photo-slider .wrapper .slider-block .slides .slide img {
+  height: 100%;
+  width: 100%;
+}
+                  </pre>
+               </code>
+            </div>
+            <div class="code-img"> 
+               <img src="sources/img/slider.png">
+            </div>
+         </div>
+         
+      </section>
+   </div>
+   <footer>
+      <div><a href="../index.html">Home</a></div>
+   </footer>
+</body>
+
+</html>

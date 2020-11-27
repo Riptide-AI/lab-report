@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="scripts/script.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   <title>Report-page</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header>
+         <div class="container">
+            <p class="title">Звіти з лабораторних робіт</p>
+            <p class="title">з дисципліни «розроблення web-застосуваннь»</p>
+            <br>
+            <p>Роботу виконали студенти групи <b>ІА-93</b> Візняк Максим та Бречко Олександра</p>
+         </div>
+      </header>
+      <nav>
+         <div class="nav-element"><a href="../lab1/index.html">Лабораторна 1</a></div>
+         <div class="nav-element"><a href="../lab2/index.html">Лабораторна 2</a></div>
+         <div class="nav-element"><a href="../lab3/index.html">Лабораторна 3</a></div>
+         <div class="nav-element"><a href="index.html">Лабораторна 4</a></div>
+         <div class="nav-element"><a href="../lab5/index.html">Лабораторна 5</a></div>
+         <div class="nav-element"><a href="../lab6/index.html">Лабораторна 6</a></div>
+         <div class="nav-element"><a href="../lab7/index.html">Лабораторна 7</a></div>
+         <div class="nav-element"><a href="../lab8/index.html">Лабораторна 8</a></div>
+      </nav>
+      <section>
+         <div class="menu">
+            <div class="menu-item" onclick="toggle('set-task-lab')">Постановка задачі Лабораторної №4</div>
+            <div class="menu-item" onclick="toggle('task-4')">Масиви (4 пункт)</div>
+            <div class="menu-item" onclick="toggle('task-6')">Виконання 6 пункту</div>
+            <div class="menu-item" onclick="toggle('total')">Висновок   </div>
+            
+            <div class="drop-out">
+               <div class="drop-down" onclick="dropDown()">
+                  <p>Способи застосування JS</p>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="25" viewBox="0 0 32 32">
+                     <path class="svg" d="M28.2,1.7l-1.4-1.4C26.6,0.1,26.4,0,26.1,0c-0.2,0-0.5,0.1-0.7,0.3L14.2,11.5L3,0.3C2.8,0.1,2.6,0,2.4,0
+                           C2.1,0,1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.1,0,2.4C0,2.6,0.1,2.8,0.3,3l13.3,13.3c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.3
+                           L28.2,3c0.2-0.2,0.3-0.4,0.3-0.7C28.5,2.1,28.4,1.9,28.2,1.7z" />
+                  </svg>
+               </div>
+               <div class="container" id="drop-down-content">
+                  <div class="pop-text" onclick="toggle('tab-1')">Схема URL</div>
+                  <div class="pop-text" onclick="toggle('tab-2')">Обробник подій</div>
+                  <div class="pop-text" onclick="toggle('tab-3')">Підстановка(entity)</div>
+                  <div class="pop-text" onclick="toggle('tab-4')">Вставка(тег SCRIPT)</div>
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="start-window">
+               <p>Start<!--Here write any code you want to show as a report--></p>
+         </div>
+
+
+         <div class="content-window" id="total">
+            <div class="text">
+               <p>
+                  Отже, під час виконання цієї лабораторної роботи ми придбали практичні навички редагування інформації сайту, створення елементів, та їх заповнення використовуючи мову JavasSript                 
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="set-task-lab">
+            <div class="text">
+               <p> 
+                  Мета: придбати практичні навички роботи маніпулювання інформаційним вмістом Web-документа засобами мови JavasSript, використання об’єктів,масивів, функцій, подій, обробників подій у сценаріях на мові JavasSript      
+               </p>
+            </div>
+         </div>
+
+         <div class="content-window" id="task-4">
+            <div class="text"> 
+               <b>Варіант 7</b> <br>
+               <img src="sources/img/arr.png">
+            </div>
+            <div class="code">
+               <code>
+                  <pre>
+--------------------------------------------------------------------------
+'use strict';
+let isActive = false;
+
+function dropDown() {
+   if(!isActive){
+   document.getElementById("drop-down-content").style.display = "block";
+   isActive = !isActive;
+   }
+   else {
+      document.getElementById("drop-down-content").style.display = "none";
+      isActive = !isActive;
+   }
+}
+
+function toggle(id){
+   let elements = document.getElementsByClassName("content-window")
+
+   for (let i = 0; i &lt elements.length; i++){
+      elements[i].style.display = "none";
+   }
+   document.getElementById(id).style.display = "flex";
+}
+function createArray(n){
+   let array = new Array(n);
+   let odd = true;
+   for (let i = 0; i &lt n; i++){
+      odd =! odd;
+      array[i] = (Math.floor(Math.random() * 100));
+      if (odd === false){
+         array[i] *=-1;
+      }
+   }
+   return array;
+}
+function selectionSort(inputArr) { 
+   let n = inputArr.length;
+       
+   for(let i = 0; i &lt n; i++) {
+       let min = i;
+       for(let j = i+1; j &lt n; j++){
+           if(inputArr[j] &lt inputArr[min]) {
+               min=j; 
+           }
+        }
+        if (min != i) {
+            // Swapping the elements
+            let tmp = inputArr[i]; 
+            inputArr[i] = inputArr[min];
+            inputArr[min] = tmp;      
+       }
+   }
+   return inputArr;
+}
+
+function printArray(length, outputId){
+   let output = document.getElementById(outputId);
+   output.innerHTML = "";
+   let unSortedArr = createArray(length);
+   print(unSortedArr);
+   let sortedArr = selectionSort(unSortedArr);
+   print(sortedArr);
+   output.innerHTML += check(sortedArr);
+   function print(arr){
+      for (let i = 0; i &lt arr.length; i++){
+         output.innerHTML += arr[i] +" "; 
+      }
+      output.innerHTML+= "&ltbr&gt";
+   }
+
+   
+}
+function check(inputArr) { 
+   let n = inputArr.length;
+   let posArr = new Array();
+   let negArr = new Array();
+       
+   for(let i = 0; i &lt n; i++) {
+      switch(inputArr[i] &gt= 0){
+         case true:
+            posArr.push(inputArr[i]);
+            break;
+         case false:
+            negArr.push(inputArr[i]);
+            break;
+         default:
+            break;
+      }
+
+   }
+   return "Biggest negative number is: "+ negArr[negArr.length-1] + "&ltbr&gt"+"Smallest positive number is: " + posArr[0];
+}
+
+
+
+                  </pre>
+               </code>
+            </div>
+
+            <div class="text"> 
+               <b>Варіант 5</b> <br>
+               <img src="sources/img/arr2.png">
+            </div>
+            <div class="code">
+               <code>
+                  <pre>
+--------------------------------------------------------------------------
+&lt;script&gt;
+function arrayTask() {
+    var num = Number(document.getElementById('number').value);
+    document.getElementById('numResult').innerHTML = "Кількість елементів масиву: " + num;
+
+    const arr = Array(num);
+    for (var i = 0; i &lt; num; i++) {
+        arr[i] = Math.floor(1 + Math.random() * 99);
+    }
+    document.getElementById('arrayResult').innerHTML = "Створений масив: " + arr;
+
+    const evenArr = Array();
+    const oddArr = Array();
+    for (var i = 0; i &lt; num; i++) {
+        if (arr[i] % 2 == 0) {
+            evenArr.push(arr[i]);
+        } else {
+            oddArr.push(arr[i]);
+        }
+    }
+
+    document.getElementById('evenResult').innerHTML = "Масив парних чисел: " + evenArr;
+    document.getElementById('oddResult').innerHTML = "Масив непарних чисел: " + oddArr;
+
+    document.getElementById('maxEvenResult').innerHTML = "Максимальне парне число: " + maxEl(evenArr);
+    document.getElementById('maxOddResult').innerHTML = "Максимальне непарне число: " + maxEl(oddArr);
+    document.getElementById('minEvenResult').innerHTML = "Мінімальне парне число: " + minEl(evenArr);
+    document.getElementById('minOddResult').innerHTML = "Мінімальне непарне число: " + minEl(oddArr);
+
+    document.getElementById('sortResult').innerHTML = "Відсортований масив: " + selectionSort(arr);
+}
+
+function maxEl(array){
+    var max = array[0];
+    for (var i = 0; i &lt; array.length; i++) {
+        if (max &lt; array[i]) max = array[i]; 
+    }
+    return max;
+}
+
+function minEl(array){
+    var min = array[0];
+    for (var i = 0; i &lt; array.length; i++) {
+        if (min &gt; array[i]) min = array[i];
+    }
+    return min;
+}
+
+function selectionSort(inputArr) { 
+    let n = inputArr.length;
+        
+    for(let i = 0; i &lt; n; i++) {
+        let min = i;
+        for(let j = i; j &lt; n; j++){
+            if(inputArr[j] &lt; inputArr[min]) {
+                min=j; 
+            }
+        }
+        if (min != i) {
+            let tmp = inputArr[i]; 
+            inputArr[i] = inputArr[min];
+            inputArr[min] = tmp;      
+        }
+    }
+    return inputArr;
+}
+
+document.getElementById('ok').addEventListener('click', arrayTask);
+&lt;/script&gt;
+
+                  </pre>
+               </code>
+            </div>
+         </div>
+
+         <div class="content-window" id="task-6">
+            <div class="text"> 
+               <form name="histogram-form" onsubmit=" return false">
+                  <input type="number" name="columns-amount" id="columns-amount" placeholder = "Amount of columns" min="4" max="25" required>
+                  <input type="submit" onclick="createHisto()">
+               </form>
+               <div class="histogram" id="histo">
+
+               </div>
+               <div class="code">
+                  <code>
+                     <pre>
+<b>JS</b>
+                        
+
+function createHisto(){
+   let histoField = document.getElementById("histo");
+   histoField.innerHTML = null;
+   let histoFieldHeight = histoField.offsetHeight;
+   let histoFieldWidth = histoField.offsetWidth;
+   let colNum = document.getElementById("columns-amount").value;
+   let array = createArray(colNum);
+   // array = selectionSort(array); 
+   if (colNum >= 4 && colNum &lt;= 25){
+      for(let i = 0; i &lt; array.length; i++)
+      {
+         array[i] = Math.abs(array[i]);
+         let column = document.createElement("div");
+         let p = document.createElement("p");
+         p.innerHTML= array[i];
+   
+         column.className = "column";
+         column.style.width = histoFieldWidth/array.length +'px';
+         column.style.height = histoFieldHeight/100 * array[i] + 'px';
+         histoField.appendChild(column);
+         column.appendChild(p);
+      }
+   
+
+   }
+
+}
+
+<b>CSS</b>
+
+.histogram
+            margin: 20px auto
+            width: 900px
+            height: 500px
+            border: 1px solid black
+            display: flex
+            align-items: flex-end
+            
+            .column
+               background-color: $highlighted-light
+               border: 1px solid black
+               display: flex
+               max-height: 500px
+               justify-content: center
+               align-items: center
+
+                     </pre>
+                  </code>
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="tab-1">
+            <div class="var-7">
+               <div class="code">
+                  <img src="sources/img/Screenshot_1.png">
+               </div>
+            </div>
+         </div>
+         <div class="content-window" id="tab-2">
+            <div class="var-7">
+               <!---var 7 write here -->
+               <div class="code">
+                  <img src="sources/img/Screenshot_2.png">
+               </div>
+            </div>
+         </div>
+         <div class="content-window" id="tab-3">
+            <div class="var-7">
+               <!---var 7 write here -->
+               <div class="code">
+                  <img src="sources/img/Screenshot_3.png">
+               </div>
+            </div>
+         </div>
+         <div class="content-window" id="tab-4">
+            <div class="var-7">
+               <!---var 7 write here -->
+               <div class="code">
+                  <img src="sources/img/Screenshot_4.png">
+               </div>
+            </div>
+         </div>
+
+         
+
+      </section>
+   </div>
+   <footer>
+      <div><a href="../index.html">Home</a></div>
+   </footer>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> JavaScript </title>
+		<meta charset="UTF-8">
+        <link rel="icon" href="icon.png">
+    </head>
+    <body style="color: whitesmoke; background-color: #5d6d7e; text-align: center; font-family: Tahoma; font-size: large;">
+        <h1>Створення одновимірного массиву</h1>
+        <h3>Вкажіть кількість елементів масиву:</h3>
+        <input type="text" id="number">
+        <input type="submit" id="ok" value="OK"> 
+        <div style="margin-top: 5%;" id="numResult"> - Результат -</div>
+        <div id="arrayResult"></div>
+        <br>
+        <div id="evenResult"></div>
+        <div id="oddResult"></div>
+        <br>
+        <div id="maxEvenResult"></div>
+        <div id="maxOddResult"></div>
+        <div id="minEvenResult"></div>
+        <div id="minOddResult"></div>
+        <br>
+        <div id="sortResult"></div>
+
+        <script>
+            function arrayTask() {
+
+                var num = Number(document.getElementById('number').value);
+                document.getElementById('numResult').innerHTML = "Кількість елементів масиву: " + num;
+
+                const arr = Array(num);
+                for (var i = 0; i < num; i++) {
+                    arr[i] = Math.floor(1 + Math.random() * 99);
+                }
+                document.getElementById('arrayResult').innerHTML = "Створений масив: " + arr;
+
+                const evenArr = Array();
+                const oddArr = Array();
+                for (var i = 0; i < num; i++) {
+                    if (arr[i] % 2 == 0) {
+                        evenArr.push(arr[i]);
+                    } else {
+                        oddArr.push(arr[i]);
+                    }
+                }
+
+                document.getElementById('evenResult').innerHTML = "Масив парних чисел: " + evenArr;
+                document.getElementById('oddResult').innerHTML = "Масив непарних чисел: " + oddArr;
+
+                document.getElementById('maxEvenResult').innerHTML = "Максимальне парне число: " + maxEl(evenArr);
+                document.getElementById('maxOddResult').innerHTML = "Максимальне непарне число: " + maxEl(oddArr);
+                document.getElementById('minEvenResult').innerHTML = "Мінімальне парне число: " + minEl(evenArr);
+                document.getElementById('minOddResult').innerHTML = "Мінімальне непарне число: " + minEl(oddArr);
+
+                document.getElementById('sortResult').innerHTML = "Відсортований масив: " + selectionSort(arr);
+            }
+
+            function maxEl(array){
+                var max = array[0];
+                for (var i = 0; i < array.length; i++) {
+                    if (max < array[i]) max = array[i]; 
+                }
+                return max;
+            }
+
+            function minEl(array){
+                var min = array[0];
+                for (var i = 0; i < array.length; i++) {
+                    if (min > array[i]) min = array[i];
+                }
+                return min;
+            }
+
+            function selectionSort(inputArr) { 
+                let n = inputArr.length;
+                    
+                for(let i = 0; i < n; i++) {
+                    let min = i;
+                    for(let j = i; j < n; j++){
+                        if(inputArr[j] < inputArr[min]) {
+                            min=j; 
+                        }
+                    }
+                    if (min != i) {
+                        let tmp = inputArr[i]; 
+                        inputArr[i] = inputArr[min];
+                        inputArr[min] = tmp;      
+                    }
+                }
+                return inputArr;
+            }
+
+            document.getElementById('ok').addEventListener('click', arrayTask);
+        </script>
+
+    </body>
+</html>

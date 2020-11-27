@@ -1,0 +1,211 @@
+$text-default-color: #1F1F1F
+$border-color: #1F1F1F
+$background-color: #EBEBEB
+$highlighted-dark: #FCA311
+$highlighted-light: #F5CB5C
+$main-color: #1F1F1F
+$windows-color: #FFFFFF
+
+@mixin main-text 
+   font-family: 'Montserrat', sans-serif
+   font-size: 16px
+    
+*
+   
+   box-sizing: border-box
+   margin: 0
+   padding: 0
+
+body
+   background-color: $background-color
+
+.wrapper
+   width: 100%
+   max-width: 1570px
+   min-height: 900px
+   height: 95vh
+   margin: 0 auto
+   display: flex
+   flex-direction: column
+    
+header 
+   width: 100%
+   background-color: $background-color
+   display: flex
+   justify-content: space-around
+   align-items: center
+   padding: 30px 0
+   .container
+      text-align: center
+      width: 70%
+      p
+         @include main-text
+      .title
+         font-weight: bold
+         font-size: 18px
+         text-transform: uppercase
+nav
+   width: 100%
+   display: flex
+   justify-content: space-between
+   border-bottom: 1px solid $border-color
+   
+   .nav-element
+      height: 70px
+      flex-basis: 12.5%
+      cursor: pointer
+      display: flex
+      justify-content: center
+      align-items: center
+      background-size: 200% 200%
+      a
+         text-decoration: none
+         @include main-text
+         color: $text-default-color
+         height: 100%
+         width: 100%
+         display: flex
+         align-items: center
+         justify-content: center
+      &:hover
+         transition-duration: .4s
+         background-image: linear-gradient(to top, $border-color 51%, transparent 50%)
+         background-position: 0 100%
+         a
+            color: $highlighted-light
+            transition-duration: .3s
+section
+   padding: 30px 30px 30px 0
+   min-width: 800px
+   width: 100%
+   height: 100%
+   display: flex
+   .menu
+      flex-basis: 25%
+      margin-right: 10px
+      font-weight: bold
+      .menu-item
+         height: 60px
+         width: 305px
+         margin: 0 30px 20px 30px
+         background-color: $windows-color
+         cursor: pointer
+         text-transform: capitalize
+         @include main-text
+         font-size: 14px
+         display: flex
+         align-items: center
+         justify-content: space-around
+         &:hover
+            //background-color: $main-color
+            transition-duration: .2s 
+            color: $highlighted-light
+      .drop-out 
+         width: 305px
+         margin: 20px 30px
+         background-color: $windows-color
+         cursor: pointer
+         text-transform: capitalize
+         @include main-text
+         font-size: 14px
+         display: flex
+         align-items: center
+         justify-content: space-around
+         flex-direction: column
+            
+         .drop-down
+            flex-basis: 60px
+            width: 100%
+            display: flex
+            align-items: center
+            color: $windows-color
+            padding-left: 40px
+            background-color: $text-default-color
+            position: relative
+            cursor: default
+            svg
+               fill: $windows-color
+               position: absolute
+               top: 25px
+               right: 25px
+               cursor: pointer
+               &:hover
+                  fill: $highlighted-light
+         .container
+            width: 100%
+            height: 100%
+            display: none
+            .pop-text
+               flex-basis: 60px
+               width: 100%
+               display: flex
+               align-items: center
+               justify-content: space-around
+               height: 60px
+               width: 100%
+               &:hover
+                  background-color: $text-default-color
+                  color: $highlighted-light
+                  transition-duration: .2s       
+   .content-window
+      flex-basis: 75%
+      max-width: 75%
+      background-color: $windows-color
+      height: 100%
+      display: none
+      flex-direction: column
+      overflow: auto
+      max-height: 650px
+      .code
+         display: flex
+         padding: 15px
+         font-size: 14px
+         font-family: 'Montserrat', sans-serif
+         pre
+            width: 100%
+            height: 100%
+      .text
+         padding: 0 15px
+         word-spacing: 2px
+         font-size: 22px
+         font-family: Arial, sans-serif
+         p
+            margin: 20px 0 
+      .code-img
+         width: 100%
+         img
+            width: 100%
+footer
+   width: 100%
+   height: 5vh 
+   background-color: $background-color
+   box-shadow: 0px 0px 5px rgba(0,0,0,0.5)
+   display: flex
+   justify-content: space-around
+   align-items: center
+   @include main-text
+   div
+      cursor: pointer
+      font-weight: bold
+      a
+         text-decoration: none
+         @include main-text
+         color: $main-color
+         letter-spacing: 1.5px
+      &:hover
+         a
+            color: $windows-color
+            background-color: $main-color
+            padding: 5px 4px
+            border-radius: 5px
+         .orng-text
+            color: $main-color
+            border-radius: 3px
+            background-color: $highlighted-dark
+#start-window
+   display: flex
+   justify-content: center
+   align-items: center
+   @include main-text
+   font-size: 40px
+   
