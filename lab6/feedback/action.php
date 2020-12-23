@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $content = "You have recieved message from ".$username."\n\n".$comment; 
     
     mail($email_to,$topic,$content,$headers);
-    header('Location: ../index.php');
+    header('Location: thanks.html');
     
 }
 

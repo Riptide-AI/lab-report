@@ -29,8 +29,8 @@
          <div class="nav-element"><a href="../lab2/index.html">Лабораторна 2</a></div>
          <div class="nav-element"><a href="../lab3/index.html">Лабораторна 3</a></div>
          <div class="nav-element"><a href="../lab4/index.html">Лабораторна 4</a></div>
-         <div class="nav-element"><a href="index.html">Лабораторна 5</a></div>
-         <div class="nav-element"><a href="../lab6/index.html">Лабораторна 6</a></div>
+         <div class="nav-element"><a href="../lab5/index.html">Лабораторна 5</a></div>
+         <div class="nav-element"><a href="index.html">Лабораторна 6</a></div>
          <div class="nav-element"><a href="../lab7/index.html">Лабораторна 7</a></div>
          <div class="nav-element"><a href="../lab8/index.html">Лабораторна 8</a></div>
          <div class="nav-element"><a href="../lab9/index.html">Лабораторна 9</a></div>
@@ -68,12 +68,58 @@
          </div>
 
          <div class="content-window" id="tab-2">
-            <div class="text"> 
+            <div class="text">
+               <img src="sources/img/ui.png" alt=""> 
             </div>
             <div class="code">
                <code>
                   <pre>
-2
+
+                     <b>HTML</b>
+
+&lt;div id="tabs"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#tabs-1"&gt;Вкладка 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tabs-2"&gt;Вкладка 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tabs-3"&gt;Вкладка 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="tabs-1"&gt;
+    &lt;p&gt;Текст 1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tabs-2"&gt;
+    &lt;p&gt;Текст 2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tabs-3"&gt;
+    &lt;p&gt;Текст 3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="dialog"&gt;
+   &lt;p&gt;This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;br&gt;
+&lt;fieldset&gt;
+  &lt;legend&gt;Оберіть локацію&lt;/legend&gt;
+  &lt;label for="radio-1"&gt;Київ&lt;/label&gt;
+  &lt;input type="radio" name="radio-1" id="radio-1"&gt;
+  &lt;label for="radio-2"&gt;Вінниця&lt;/label&gt;
+  &lt;input type="radio" name="radio-1" id="radio-2"&gt;
+  &lt;label for="radio-3"&gt;Одеса&lt;/label&gt;
+  &lt;input type="radio" name="radio-1" id="radio-3"&gt;
+&lt;/fieldset&gt;
+
+<b>JS</b>
+
+$( function() {
+   $( "#tabs" ).tabs();
+} );
+$( function() {
+   $( "#dialog" ).dialog();
+} );
+$( function() {
+   $( "input" ).checkboxradio();
+} );
+
                   </pre>
                </code>
             </div>
@@ -91,49 +137,110 @@
 
          <div class="content-window" id="tab-3">
             <div class="text"> 
+               <img src="sources/img/form.png" alt="">
+               <img src="sources/img/email.png" alt="">
+               <img src="sources/img/data.png" alt="">
+            </div>
                <div class="code">
                   <code>
                      <pre>
-3
+
+<b> Index.html</b>
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Feedback&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"&gt;
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div class="wrapper"&gt;
+      &lt;h2&gt;Feedback&lt;/h2&gt;
+      &lt;form action="action.php" method="POST" &gt; 
+      &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email address:&lt;/label&gt;
+        &lt;input type="email" class="form-control" id="email" name="email" required&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+         &lt;label for="usr"&gt;Name:&lt;/label&gt;
+         &lt;input type="text" class="form-control" id="username" name="username" required&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+         &lt;label for="usr"&gt;Topic:&lt;/label&gt;
+         &lt;input type="text" class="form-control" id="topic" name="topic" required&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+         &lt;label for="comment"&gt;Comment:&lt;/label&gt;
+         &lt;textarea class="form-control" rows="5" id="comment" name="comment" required&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="btn btn-success" name="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+<b>action.php</b>
+
+&lt;?php
+if(isset($_POST['submit'])){
+    $email_from = $_POST['email'];
+    $username = $_POST['username'];
+    $topic = $_POST['topic'];
+    $comment = $_POST['comment'];
+    
+    
+    $email_to = 'Razor5826@gmail.com';
+    
+    $headers = "From: ".$email_from;
+    $content = "You have recieved message from ".$username."\n\n".$comment; 
+    
+    mail($email_to,$topic,$content,$headers);
+    header('Location: thanks.html');
+    
+}
+
+
+?&gt;
+
+<b>thanks.html</b>
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Thanks&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"&gt;
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div class="container"&gt;
+      &lt;h2 class="text-center"&gt;Дякуємо за ваш відгук !&lt;/h2&gt;
+      &lt;h3 class="text-center" id="date"&gt;Повідомлення було відправлено о &lt;/h3&gt;
+      &lt;script&gt;
+         document.getElementById("date").innerHTML+= Date();    
+      &lt;/script&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
                      </pre>
                   </code>
                </div>
-            </div>
          </div>
 
          <div class="content-window" id="tab-4">
             <div class="text">
-               <p>
-                      4
-               </p>
+               <img src="sources/img/apache.png" alt="">
             </div>
          </div>
-
-         <div class="content-window" id="drop-1">
-            <div class="var-7">
-               <div class="code">
-                  
-               </div>
-            </div>
-         </div>
-         <div class="content-window" id="drop-2">
-            <div class="var-7">
-
-               <div class="code">
-
-               </div>
-            </div>
-         </div>
-         <div class="content-window" id="drop-3">
-            <div class="var-7">
-
-               <div class="code">
-
-               </div>
-            </div>
-         </div> 
-
-         
 
       </section>
    </div>
