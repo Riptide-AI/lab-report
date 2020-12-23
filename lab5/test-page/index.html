@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+   <link rel="stylesheet" 
+      href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" 
+      integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" 
+      crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous">
+   </script>
+
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script src='scripts/main.js'></script>  <!--jQuery-->
+   <!-- plugins -->
+   <script src='plugins/unitegallery/themes/video/ug-theme-video.js' type='text/javascript'></script>
+				<!-- Include Unite Gallery core files -->
+	<script src='plugins/unitegallery/js/unitegallery.min.js' type='text/javascript'  ></script>
+	<link  href='plugins/unitegallery/css/unite-gallery.css' rel='stylesheet' type='text/css' />
+														
+   <script src='plugins/unitegallery/themes/video/ug-theme-video.js' type='text/javascript'></script>
+   <link  href='plugins/unitegallery/themes/video/skin-right-thumb.css' rel='stylesheet' type='text/css' />
+
+   <script src='plugins/unitegallery/themes/carousel/ug-theme-carousel.js' type='text/javascript'></script>
+
+   <!-- socials -->
+
+   <script src="plugins/socials/docs/js/jquery.c-share.js"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+   <!-- clock -->
+   <link rel="stylesheet" href="plugins/clock/analogclock.css">
+
+   <script src="plugins/clock/analogclock.js"></script>
+   
+   <!-- weather -->
+   
+	<script type="text/javascript" src='plugins/weather/js/autocomplete.js'></script>
+   <link rel="stylesheet" type="text/css" href="plugins/weather/css/weather.css">
+
+
+   <!-- currency -->
+   <script src="plugins/currency/bngMoney.js"></script>
+
+
+   <title>Test-page</title>
+</head>
+<body>
+   <p>Date: <input type="text" id="datepicker"></p>
+
+   <div id="gallery"> 
+				
+      <div data-type="youtube"
+          data-videoid="zOIk-Ddg1E8"
+          data-title="GoPro: Revenge at Red Bull Rampage 2016"
+          data-description="by Go Pro"></div>
+          
+          <div data-type="youtube"
+          data-videoid="MWyBgudQqsI"
+          data-title="GoPro: Foggy Forest MTB"
+          data-description="by Go Pro"></div>
+
+          <div data-type="youtube"
+          data-videoid="cK1igzo7XKs"
+          data-title="GoPro: Jordie Lunn - GoPro Pinkbike Evolution Contest Finalist - 06.15.18"
+          data-description="by Go Pro"></div>
+
+          <div data-type="youtube"
+          data-videoid="C2MuPacmxuM"
+          data-title="GoPro: Top 10 Mountain Bike (MTB) Highlights"
+          data-description="by Go Pro"></div>
+               
+      </div>
+
+      <br>
+
+<div id="slider">
+   <img src="sources/img/slide-1.jpg" alt="">
+   <img src="sources/img/slide-2.jpg" alt="">
+
+</div>
+<div id="shareBlock"></div>
+<div id="clock"></div>
+<br>
+<br>
+<br>
+<br>
+<div class="weather-block">
+   <script src='plugins/weather/js/app.js'></script>
+   <div class="weather"></div>
+   <div class="weather1"></div>
+</div>
+
+<br>
+<div class="demo">
+   <!-- Currency Converter Form -->
+   <form action="" role="form">
+     <label for="baseList">From:</label>
+     <select name="baseList" id="baseList"></select>
+     <input type="number" name="baseInput" value="" id="baseInput">
+ 
+     <label for="targetList">To:</label>
+     <select name="targetList" id="targetList"></select>
+     <input type="text" name="targetOutput" value="" id="targetOutput" readonly>
+   </form> 
+ </div>
+</body>
+</html>
