@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="scripts/script.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+   <script src='scripts/main.js'></script>  <!--jQuery-->
+
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   <title>Report-page</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header>
+         <div class="container">
+            <p class="title">Звіти з лабораторних робіт</p>
+            <p class="title">з дисципліни «розроблення web-застосуваннь»</p>
+            <br>
+            <p>Роботу виконали студенти групи <b>ІА-93</b> Візняк Максим та Бречко Олександра</p>
+         </div>
+      </header>
+      <nav>
+         <div class="nav-element"><a href="../lab1/index.html">Лабораторна 1</a></div>
+         <div class="nav-element"><a href="../lab2/index.html">Лабораторна 2</a></div>
+         <div class="nav-element"><a href="../lab3/index.html">Лабораторна 3</a></div>
+         <div class="nav-element"><a href="../lab4/index.html">Лабораторна 4</a></div>
+         <div class="nav-element"><a href="../lab5/index.html">Лабораторна 5</a></div>
+         <div class="nav-element"><a href="../lab6/index.html">Лабораторна 6</a></div>
+         <div class="nav-element"><a href="../lab7/index.html">Лабораторна 7</a></div>
+         <div class="nav-element"><a href="index.html">Лабораторна 8</a></div>
+         <div class="nav-element"><a href="../lab9/index.html">Лабораторна 9</a></div>
+      </nav>
+      <section>
+         <div class="menu">
+            <div class="menu-item" onclick="toggle('tab-1')">Постановка задачі Лабораторної №8</div>
+            <div class="menu-item" onclick="toggle('tab-2')">Інфологічна модель</div>
+            <div class="menu-item" onclick="toggle('tab-3')">Даталогічна модель</div>
+            <div class="menu-item" onclick="toggle('total')">Висновок</div>
+            
+            <div class="drop-out">
+               <div class="drop-down">
+                  <p>SQL запити до БД</p>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="25" viewBox="0 0 32 32">
+                     <path class="svg" d="M28.2,1.7l-1.4-1.4C26.6,0.1,26.4,0,26.1,0c-0.2,0-0.5,0.1-0.7,0.3L14.2,11.5L3,0.3C2.8,0.1,2.6,0,2.4,0
+                           C2.1,0,1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.1,0,2.4C0,2.6,0.1,2.8,0.3,3l13.3,13.3c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.3
+                           L28.2,3c0.2-0.2,0.3-0.4,0.3-0.7C28.5,2.1,28.4,1.9,28.2,1.7z" />
+                  </svg>
+               </div>
+               <div class="container" id="drop-down-content">
+                  <div class="drop-bar" onclick="toggle('drop-1')">Авторизація</div>
+                  <div class="drop-bar" onclick="toggle('drop-2')">Вибір мов</div>
+               </div>
+            </div>
+         </div>
+
+         <div class="content-window" id="start-window">
+               <p>Start<!--Here write any code you want to show as a report--></p>
+         </div>
+
+
+         
+         <div class="content-window" id="total">
+            <div class="text">
+               <h2>
+                  Висновок
+               </h2>
+               <p>У восьмій лабораторній роботі отримали практичні навички роботи взаємодії WEB-застосувань з СУБД, використання сесій і cookies в сценаріях авторизації, розробки сценаріїв обробки даних з файлів. <br> 
+
+                  Ми ознайомилися з теоретичними відомостями до лабораторної роботи №8 (Реалізація БД в СУБД MySQL, PHP - скрипт для внесення даних до БД через html-форму, PHP - скрипт для внесення даних до БД через html-форму) <br> 
+                  
+                  Завантажили «XAMPP»<br> 
+                  
+                  Визначили класи об'єктів, дані які будуть зберігатися у БД<br> 
+                  
+                  Cтворили інфологічну модель<br> 
+                  
+                  Нормалізували реляційну базу<br> 
+
+                  Створили даталогічну модель<br> 
+                  
+                  Реалізували базу даних в СУБД MySQL, використовуючи веб-інтерфейс для роботи із сервером MySQL phpMyAdmin.<br> 
+               </p>
+            </div>
+         </div>
+
+
+         <div class="content-window" id="tab-1">
+            <div class="text">
+               Тема: ІНТЕРФЕЙСИ ВЗАЄМОДІЇ WEB-ЗАСТОСУВАНЬ З СИСТЕМОЮ КЕРУВАННЯ БАЗ ДАНИХ (СКБД). SQL-ЗАПИТИ У PHP-СЦЕНАРІЯХ. ІНТЕРФЕЙСИ WEB-ЗАСТОСУВАНЬ з СКБД. ВИКОРИСТАННЯ СЕСІЙ І COOKIES  В СЦЕНАРІЯХ АВТОРИЗАЦІЇ. РОЗРОБКА СЦЕНАРІЇВ ОБРОБКИ ДАНИХ З ФАЙЛІВ. <br><br>
+
+               Мета: придбати практичні навички роботи взаємодії WEB- застосувань з СКБД, використання сесій і cookies  в сценаріях авторизації, розробки сценаріїв обробки даних з файлів.
+               
+            </div>
+         </div>
+
+         <div class="content-window" id="tab-2">
+            <div class="text"> 
+               <img src="sources/img/Screenshot_3.png" alt="">
+               <img src="sources/img/Screenshot_4.png" alt="">
+               <img src="sources/img/Screenshot_5.png" alt="">
+               <img src="sources/img/Screenshot_6.png" alt="">
+               <img src="sources/img/Screenshot_7.png" alt="">
+               <img src="sources/img/Screenshot_8.png" alt="">
+               <br>
+               <p>Інфологічна модель</p>
+               <br>
+               <img src="sources/img/Screenshot_1.png" alt="">
+            </div>
+         </div>
+
+         <div class="content-window" id="tab-3">
+            <div class="text"> 
+               <p>Даталогічна модель</p>
+               <br>
+               <img src="sources/img/Screenshot_2.png" alt="">
+            </div>
+         </div>
+
+         <div class="content-window" id="drop-1">
+            <div class="text"> 
+               <img src="sources/img/Screenshot_9.png" alt="">
+               <img src="sources/img/Screenshot_10.png" alt="">
+               <img src="sources/img/Screenshot_11.png" alt="">
+               <img src="sources/img/Screenshot_12.png" alt="">
+               <img src="sources/img/Screenshot_13.png" alt="">
+               <img src="sources/img/Screenshot_14.png" alt="">
+               <img src="sources/img/Screenshot_15.png" alt="">
+               <img src="sources/img/Screenshot_16.png" alt="">
+               <img src="sources/img/Screenshot_17.png" alt="">
+            </div> 
+         </div>
+         
+         <div class="content-window" id="drop-2">
+            <div class="text"> 
+               <img src="sources/img/Screenshot_18.png" alt="">
+               <img src="sources/img/Screenshot_19.png" alt="">
+               <img src="sources/img/Screenshot_20.png" alt="">
+               <img src="sources/img/Screenshot_21.png" alt="">
+               <img src="sources/img/Screenshot_22.png" alt="">
+               <img src="sources/img/Screenshot_23.png" alt="">
+            </div>
+         </div>
+
+
+
+      </section>
+   </div>
+   <footer>
+      <div><a href="../index.html">Home</a></div>
+   </footer>
+</body>
+
+</html>
